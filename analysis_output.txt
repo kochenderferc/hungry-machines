@@ -1,0 +1,65 @@
+==============================================================================
+1. EFFECT OF NOISE WITHIN EACH REWARD REGIME  (accuracy 0.95 vs 0.45, Welch's t)
+==============================================================================
+
+  asymmetric rewards
+    eat_rate        +0.351 -> +0.360   t= -1.67  p=0.1018 ns   g=-0.42
+    gap_sd          +0.846 -> +0.773   t= +2.21  p=0.0309 *    g=+0.56
+    mean_trigger    +1.829 -> +1.767   t= +2.20  p=0.0323 *    g=+0.56
+    pct_very_full   +0.291 -> +0.273   t= +2.03  p=0.0476 *    g=+0.52
+    pct_starving    +0.003 -> +0.015   t= -4.94  p=0.0000 ***  g=-1.26
+    mean_reward     -0.535 -> -0.590   t= +6.28  p=0.0000 ***  g=+1.60
+
+  symmetric rewards
+    eat_rate        +0.342 -> +0.324   t= +3.91  p=0.0003 ***  g=+1.00
+    gap_sd          +0.915 -> +0.981   t= -1.78  p=0.0805 ns   g=-0.45
+    mean_trigger    +0.839 -> +0.696   t= +5.90  p=0.0000 ***  g=+1.50
+    pct_very_full   +0.041 -> +0.064   t= -3.67  p=0.0005 ***  g=-0.93
+    pct_starving    +0.062 -> +0.132   t= -8.25  p=0.0000 ***  g=-2.10
+    mean_reward     -0.947 -> -1.041   t= +7.98  p=0.0000 ***  g=+2.03
+
+==============================================================================
+2. REGIME x NOISE INTERACTION
+   H0: noise moves both regimes the same way.
+   Tests the difference-of-differences across independent cells.
+==============================================================================
+
+  eat_rate        delta_asym=+0.009  delta_sym=-0.018   t= +6.52  p=0.0000 ***
+  gap_sd          delta_asym=-0.073  delta_sym=+0.066   t= -3.75  p=0.0004 ***
+  mean_trigger    delta_asym=-0.063  delta_sym=-0.143   t= +2.57  p=0.0128 *
+  pct_very_full   delta_asym=-0.018  delta_sym=+0.023   t= -4.91  p=0.0000 ***
+  pct_starving    delta_asym=+0.012  delta_sym=+0.070   t= -7.86  p=0.0000 ***
+  mean_reward     delta_asym=-0.055  delta_sym=-0.093   t= +3.76  p=0.0004 ***
+
+==============================================================================
+3. MAIN EFFECT OF REWARD REGIME (pooled over accuracy)
+==============================================================================
+
+  eat_rate        asym=+0.356  sym=+0.333   t= +8.98  p=0.0000 ***  g=+1.16
+  gap_sd          asym=+0.826  sym=+0.937   t= -6.12  p=0.0000 ***  g=-0.79
+  mean_trigger    asym=+1.796  sym=+0.758   t=+67.44  p=0.0000 ***  g=+8.68
+  pct_very_full   asym=+0.282  sym=+0.055   t=+57.83  p=0.0000 ***  g=+7.44
+  pct_starving    asym=+0.010  sym=+0.102   t=-21.43  p=0.0000 ***  g=-2.76
+  mean_reward     asym=-0.565  sym=-1.000   t=+64.43  p=0.0000 ***  g=+8.29
+
+==============================================================================
+4. MONOTONICITY ACROSS ALL FOUR ACCURACY LEVELS (Spearman)
+   A real dose-response should be monotonic, not just endpoint-different.
+==============================================================================
+
+  asymmetric
+    eat_rate        rho=-0.153  p=0.0947 ns
+    gap_sd          rho=+0.270  p=0.0028 **
+    mean_trigger    rho=+0.134  p=0.1439 ns
+    pct_very_full   rho=+0.116  p=0.2083 ns
+    pct_starving    rho=-0.413  p=0.0000 ***
+    mean_reward     rho=+0.549  p=0.0000 ***
+
+  symmetric
+    eat_rate        rho=+0.355  p=0.0001 ***
+    gap_sd          rho=-0.095  p=0.3037 ns
+    mean_trigger    rho=+0.461  p=0.0000 ***
+    pct_very_full   rho=-0.286  p=0.0015 **
+    pct_starving    rho=-0.613  p=0.0000 ***
+    mean_reward     rho=+0.589  p=0.0000 ***
+
